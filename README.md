@@ -1,3 +1,34 @@
+   ## Installation
+
+   1. Clone the repository:
+      ```bash
+      git clone https://github.com/<your-username>/Loginegg_Assessment.git
+      ```
+
+   2. Navigate to the project directory:
+      ```bash
+      cd Loginegg_Assessment
+      ```
+
+   3. Install dependencies:
+      ```bash
+      npm install
+      ```
+
+   4. Create an `.env.local` file in the root directory and configure the environment variables (add your Frontegg API details, if applicable):
+      ```bash
+      NEXT_PUBLIC_FRONTEGG_CLIENT_ID=<your-client-id>
+      NEXT_PUBLIC_FRONTEGG_API_KEY=<your-api-key>
+      ```
+
+   5. Run the development server:
+      ```bash
+      npm run dev
+      ```
+
+   6. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+
+
 **Question 5:**
 
 *After going through the Frontegg customer journey and integration, take some time to explore the Frontegg portal, admin portal, and available features. Please suggest three items you would improve in that experience.*
