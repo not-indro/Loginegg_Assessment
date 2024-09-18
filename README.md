@@ -23,7 +23,7 @@
 
    5. Run the development server:
       ```bash
-      npm run dev
+      npm start
       ```
 
    6. Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
@@ -35,21 +35,20 @@
 
 **Answer:**
 
-After exploring the Frontegg platform, here are three improvements I would suggest:
+After exploring Frontegg, here are three improvements I'd suggest:
+Sure, after trying out Frontegg, here are three things I'd suggest improving:
 
-1. **Include CORS Error Troubleshooting in the Quickstart Tutorial:**
+1. **Add Video Setup Guides for Non-Tech Founders**
 
-   During the integration process, I encountered a CORS (Cross-Origin Resource Sharing) error that prevented me from logging in. This issue wasn't addressed in the quickstart tutorial, and I had to search online and check the developer console to diagnose it. Including a section in the tutorial that covers common errors like CORS issues would greatly enhance the user experience. Providing direct links to the relevant support documentation, such as the [CORS error page](https://support.frontegg.com/hc/en-us/articles/5264971544733-Why-am-I-receiving-CORS-errors-when-trying-to-load-my-app), would help users troubleshoot effectively.
+   A non-technical founder would found the setup process a bit tricky. Having easy-to-follow video tutorials would make it so much simpler for people like me to get started without getting bogged down by technical steps.
 
-2. **Add Guidance on Configuring the Admin Portal After Integration:**
+2. **Provide Clear Guidance on Using the Admin Portal After Integration**
 
-   Once the initial integration is complete, it's not immediately clear how to proceed with configuring the admin portal and managing users. It would be helpful if the integration quickstart included a link or a next step that directs users to documentation on configuring the portal, such as the [Managing Users](https://docs-beta.frontegg.com/guides/admin-portal/workspace/managing-users-admin-portal) guide. This would assist developers in understanding how to utilize the Builder features to set up user permissions, invite other users, access audit logs, and create machine-to-machine tokens.
+   Once someone newbie got through the initial setup, he/she is not sure what to do next with the admin portal. A straightforward guide on how to manage users, set permissions, invite team members, and use other features would be super helpful.
 
-3. **Consolidate Documentation Sites for Clarity:**
+3. **Simplify and Clarify the Documentation**
 
-   I noticed that there are two documentation websites: [docs-beta.frontegg.com](https://docs-beta.frontegg.com) and [docs.frontegg.com](https://docs.frontegg.com). This can be confusing, as the content and updates may not be synchronized between them. Consolidating the documentation into a single, up-to-date site or clearly indicating which one contains the most current information would improve navigation and reduce confusion for users seeking assistance.
-
----
+   I noticed the documentation was a bit confusing and hard to navigate at times. Making it more user-friendly and easier to understand would really help users find what they need without getting frustrated.
 
 **Question 6:**
 ---
@@ -161,4 +160,4 @@ This will prevent users with those email addresses from signing up to your tenan
 
 ---
 
-Hope that helps! If you have any more questions, feel free to ask.
+By addressing these questions comprehensively and providing clear, step-by-step instructions, users can better understand how to navigate and utilize the Frontegg platform effectively.
