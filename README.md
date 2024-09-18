@@ -159,5 +159,3 @@ Yes, you can block users from specific email addresses or domains by setting up 
 This will prevent users with those email addresses from signing up to your tenant.
 
 ---
-
-By addressing these questions comprehensively and providing clear, step-by-step instructions, users can better understand how to navigate and utilize the Frontegg platform effectively.
