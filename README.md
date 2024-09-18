@@ -52,113 +52,97 @@ After exploring the Frontegg platform, here are three improvements I would sugge
 ---
 
 **Question 6:**
+---
 
-*Answer some of the common questions we get from users:*
-
-**a. For some reason, when I get my invite email to my application, it redirects me to "localhost:3000"—but I didn't set this. How can I change it?**
+**a. When I receive my invite email to my application, it redirects me to "localhost:3000"—but I didn't set this. How can I change it?**
 
 **Answer:**
 
-When you create a new application in Frontegg, the default **App URL** is set to `localhost:3000` unless you specify otherwise. To change this, navigate to your application settings in the Frontegg portal:
+Ah, that's a common one! When you create a new application in Frontegg, it automatically sets the app's URL to `localhost:3000` by default. To change this to your actual app's URL, you can do the following:
 
-1. Go to the **Applications** section.
-2. Select your application.
-3. Update the **App URL** field to your desired URL.
+- Log in to the Frontegg portal and head over to the **Applications** section.
+- Click on your application.
+- You'll see a field labeled **App URL**. Just update that to the correct URL for your app.
 
-By setting the correct App URL, invite emails will redirect users to the appropriate location.
+Once you've updated it, any invite emails sent out will direct users to the right place.
 
 ---
 
-**b. Why don't I see the 'Users' page on my admin portal (in the app settings button)?**
+**b. Why don't I see the 'Users' page on my admin portal?**
 
 **Answer:**
 
-The 'Users' page may not be visible because it hasn't been enabled in your admin portal configuration. To enable it:
+If you're not seeing the 'Users' page, it might just be that it's not enabled yet. To turn it on:
 
-1. Go to the **Builder** section in the Frontegg portal.
-2. Navigate to the **Admin Portal** settings.
-3. Enable the **Users** page by toggling it on.
+- Go to the **Builder** section in the Frontegg portal.
+- Click on the **Admin Portal** settings.
+- Look for the **Users** page option and make sure it's toggled on.
 
-For detailed instructions, please refer to our [Managing Users documentation](https://docs.frontegg.com/guides/admin-portal/workspace/managing-users-admin-portal).
-
-**Bonus:** *I now see the page but I don't see the "Invite User" button, why is that?*
+**Bonus:** *I now see the page but not the "Invite User" button. Why is that?*
 
 **Answer:**
 
-The "Invite User" button is only visible to users who have the appropriate permissions. Ensure that your logged-in user account has the **Admin** role assigned on your tenant. Users without the necessary role won't see the option to invite new users.
+The "Invite User" button will only show up if you have the right permissions. Make sure that your user account has the **Admin** role assigned in your tenant. Without admin privileges, that button won't appear.
 
 ---
 
-**c. For some reason, I don't have the Google login—why is that?**
+**c. For some reason, I don't have the Google login option—why is that?**
 
 **Answer:**
 
-The Google login option needs to be enabled in your application's authentication settings. To do this:
+You'll need to enable Google login in your application's settings. Here's how you can do it:
 
-1. Go to the **Builder** section in the Frontegg portal.
-2. Navigate to the **Login Box** settings.
-3. Under **Social Logins**, enable the **Google** option.
+- In the Frontegg portal, navigate to the **Builder** section.
+- Go to the **Login Box** settings.
+- Under **Social Logins**, you'll find the option to enable **Google**. Just switch it on.
 
-Once enabled, the Google login button will appear on your application's login page.
+After that, the Google login button should appear on your application's login page.
 
 ---
 
-**d. Explain what refresh tokens are and why we need them.**
+**d. Can you explain what refresh tokens are and why we need them?**
 
 **Answer:**
 
-Refresh tokens are long-lived credentials used to obtain new access tokens without requiring the user to re-authenticate. Access tokens (often JWTs) have short lifespans for security reasons. When an access token expires, the refresh token allows the application to request a new access token, ensuring a seamless user experience without frequent logins.
+Sure thing! Refresh tokens are like a backup key that lets your app get a new access token without making the user log in again. Access tokens (like JWTs) are designed to expire after a short period for security reasons. When they do expire, the refresh token allows the app to request a new access token seamlessly, so the user doesn't notice any interruption.
 
-**Bonus:** *Why am I getting a 401 error when I open my application to login? What does it mean?*
-
-**Answer:**
-
-A 401 error indicates that the request lacks valid authentication credentials—it's an "Unauthorized" error. This can happen if:
-
-- Your access token is expired or invalid.
-- The authentication headers are missing or incorrect.
-
-To resolve this, ensure that:
-
-- You are properly logged in.
-- Your access token is valid and included in the request headers.
-
-For more troubleshooting steps, please refer to our [401 Error Troubleshooting Guide](https://support.frontegg.com/hc/en-us/articles/5425090458653-Why-do-I-get-401-error-on-refresh-requests).
-
-**Bonus:** *Explain the difference between a JWT token and a refresh token. How do they work together?*
+**Bonus:** *Why am I getting a 401 error when I try to log in? What does it mean?*
 
 **Answer:**
 
-- **JWT (JSON Web Token):** A JWT is an access token that contains user identity and authorization information. It's used to authenticate and authorize API requests. JWTs are stateless and have a short lifespan to minimize security risks if compromised.
+A 401 error means "Unauthorized," which usually indicates that your app isn't recognizing your credentials. This can happen if your access token has expired or is invalid, or if the authentication headers are missing or incorrect. To fix this, make sure you're properly logged in and that your access token is valid and included in your requests.
 
-- **Refresh Token:** A refresh token is a long-lived token used to obtain new JWT access tokens after they expire. It is securely stored and not sent with each API request.
+**Bonus:** *What's the difference between a JWT token and a refresh token? How do they work together?*
 
-**How They Work Together:**
+**Answer:**
 
-1. Upon successful authentication, the user receives both a JWT access token and a refresh token.
-2. The JWT is used for authenticated API requests until it expires.
-3. When the JWT expires, the application uses the refresh token to request a new JWT without requiring the user to log in again.
-4. This process repeats, enhancing security while providing a seamless experience.
+Great question! A **JWT (JSON Web Token)** is a short-lived token that carries information about the user and is used to authenticate requests to the server. A **refresh token** is a long-lived token that can be used to obtain a new JWT when the old one expires.
+
+Here's how they work together:
+
+1. When you log in, you receive both a JWT and a refresh token.
+2. The JWT is used to authenticate your requests until it expires.
+3. When the JWT expires, your app uses the refresh token to get a new JWT without requiring you to log in again.
+
+This system keeps your app secure while providing a smooth experience for the user.
 
 ---
 
-**e. Can you please point out which API I can use to change the user's active tenant? How should one use it?**
+**e. Is there an API I can use to change a user's active tenant? How should I use it?**
 
 **Answer:**
 
-To change a user's active tenant, you can use the **"Update User's Active Tenant" API** provided by Frontegg. Here's how:
+Yes, you can change a user's active tenant using the **"Update User's Active Tenant"** API provided by Frontegg. Here's what you need to do:
 
-1. **API Endpoint:** Refer to the [Update User's Active Tenant API documentation](https://docs.frontegg.com/reference/userscontrollerv1_updateusertenant) for the specific endpoint and request structure.
-2. **Usage:**
-   - Make a **PUT** request to the API endpoint.
-   - Include the user's ID and the tenant ID you wish to set as active in the request body.
-   - Ensure you have the necessary authentication and permissions to perform this action.
+- Make a **PUT** request to the specific endpoint detailed in the API documentation.
+- In your request, include the user's ID and the ID of the tenant you want to set as active.
+- Ensure you have the necessary permissions to perform this action.
 
 **Bonus:** *Is there a way to do this through the SDK?*
 
 **Answer:**
 
-Yes, you can perform this action using the Frontegg SDK, which provides convenient methods to interact with Frontegg APIs in your application code. Check the SDK documentation specific to your programming language for functions related to tenant management and how to update a user's active tenant.
+Absolutely! The Frontegg SDK includes methods that allow you to manage tenants programmatically. You'll want to check the SDK documentation for your specific programming language to see how to implement this.
 
 ---
 
@@ -166,21 +150,15 @@ Yes, you can perform this action using the Frontegg SDK, which provides convenie
 
 **Answer:**
 
-Yes, you can block users from specific email addresses or domains using **Security Rules** in Frontegg. Here's how:
+Yes, you can block users from specific email addresses or domains by setting up **Security Rules** in Frontegg. Here's how you can do it:
 
-1. **Navigate to Security Rules:**
-   - In the Frontegg portal, go to the **Security** section.
-   - Select **Security Rules**.
+- In the Frontegg portal, navigate to the **Security** section and select **Security Rules**.
+- Click on **Add Rule** to create a new rule.
+- Define the conditions to block the specific emails or domains you're concerned about (e.g., `*@example.com`).
+- Set the action to **Block** or **Deny** sign-ups that match your rule.
 
-2. **Create a New Rule:**
-   - Click on **Add Rule**.
-   - Define the conditions to block emails from specific addresses or domains (e.g., *@example.com*).
-
-3. **Set the Action:**
-   - Choose the action to **Block** or **Deny** sign-ups that match the rule.
-
-For detailed steps and options, please refer to the [Security Rules documentation](https://docs.frontegg.com/docs/security-rules).
+This will prevent users with those email addresses from signing up to your tenant.
 
 ---
 
-By addressing these questions comprehensively and providing clear, step-by-step instructions, users can better understand how to navigate and utilize the Frontegg platform effectively.
+Hope that helps! If you have any more questions, feel free to ask.
