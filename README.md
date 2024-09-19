@@ -1,3 +1,12 @@
+   # Frontegg Assessment   
+
+   ## Screenshots
+
+   ![Main Page](Images/1.png)
+   
+   ![Login Page](Images/2.png)
+   
+   
    ## Installation
 
    1. Clone the repository:
